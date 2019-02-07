@@ -50,6 +50,7 @@ for (i,j) in zip(feature_names,range(7)):
 plt.show()
 
 start = time.time()
+wallclock_start= time.asctime(time.localtime(time.time()))
 #feature scaling
 data_scaled = data.drop(['Outcome'],axis = 1)
 scaler = StandardScaler()
@@ -115,4 +116,7 @@ print('the percentage of true negative:', round(tn_count/l*100,2),'%')
 
 #running time
 end = time.time()
+wallclock_end= time.asctime(time.localtime(time.time()))
 print('Running time =',end-start,'s')
+print(wallclock_start)
+print(wallclock_end)
